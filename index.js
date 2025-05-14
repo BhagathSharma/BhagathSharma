@@ -78,3 +78,17 @@ let ex6 = () => {
     let sum = f6(multiples, numbers);
     document.getElementById('rex6').value = sum;
 }
+let f7 = (cart, inventory) => {
+
+    let cost = 0;
+    for (let product in cart) {
+        if (inventory[product] !== undefined) {
+            cost += (cart[product] * inventory[product]);
+        }
+    }
+    return cost;
+}
+
+let calculate = () => {
+    document.getElementById('totalPrice').value = f7(basket, prices);
+}
